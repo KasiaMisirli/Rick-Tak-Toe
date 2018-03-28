@@ -7,47 +7,60 @@ var grid = [
 ];
 
 var allKeys = document.querySelectorAll(".row div");
+var result;
 
 var cross =true;
+
 var moves = function(event){
-   
-if(cross==true && event.target.textContent != "X" && event.target.textContent != "0"){
-       // event.target.textContent != "X" && event.target.textContent != "0"
-        event.target.classList.add("ex");
-        event.target.textContent = "X";
-        var pos = event.target.id.split('');
-        grid[+pos[0]][+pos[1]] = "X";
-}else if (cross!==true &&event.target.textContent != "X" && event.target.textContent != "0"){
-        event.target.classList.add("circle");
-        event.target.textContent = "0";
-        var pos2 =event.target.id.split('');
-        grid[+pos2[0]][+pos2[1]] = "0";
-    }   
-    cross=!cross;
-    checkWins();
+    if(event.target.textContent === "X" || event.target.textContent === "0" || result!== undefined){
+        return;
+    }else{
+        if(cross==true && event.target.textContent != "X" && event.target.textContent != "0"){
+                event.target.classList.add("ex");
+                event.target.textContent = "X";
+                var pos = event.target.id.split('');
+                grid[+pos[0]][+pos[1]] = "X";
+        }else if (cross!== true && event.target.textContent != "X" && event.target.textContent != "0"){
+                event.target.classList.add("circle");
+                event.target.textContent = "0";
+                var pos2 =event.target.id.split('');
+                grid[+pos2[0]][+pos2[1]] = "0";
+        }   
+        cross=!cross;
+        checkWins();
+    }
 }
+
+
+
+// if(result!==undefined){
+// console.log("This is the end of this game! "+result);
+// }
 
 allKeys.forEach(function(item){
     item.addEventListener("click",moves);
-    
 });
+
 
 var checkWins = function() {
     for(var i=0;i<grid.length;i++){
         for(var j=0;j<grid[i].length;j++){    
             if(grid[i][0]===grid[i][1] && grid[i][1]===grid[i][2]){
-                console.log("The winner is "+grid[i][2]);
+                result="The winner is "+grid[i][2];
+                return(console.log(result));
             }else if(grid[0][i]===grid[1][i] && grid[1][i]===grid[2][i]){
-                console.log("The winner is "+grid[0][i]);
+                result="The winner is "+grid[0][i];
+                return(console.log(result));
             }else if(grid[0][0]===grid[1][1] && grid[1][1]===grid[2][2]){
-                console.log("The winner is "+grid[1][1]);
+                result="The winner is "+grid[1][1];
+                return(console.log(result));
             }else if(grid[2][0]===grid[1][1] && grid[1][1]===grid[0][2]){
-                console.log("The winner is "+grid[2][0]);
+                result="The winner is "+grid[2][0];
+                return(console.log(result));
             }
         }
     }
 }
-
 
 // var result1 = "The winner is "+grid[i][2];
 // var result2 = "The winner is "+grid[0][i];
