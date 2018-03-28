@@ -1,76 +1,55 @@
+
+
+
 .main-grid {
     justify-content: center;
     display: flex;
-    flex-direction: column;
-    border: 1px solid black;
+    flex-wrap: wrap;
+    text-align: center;
+    /* flex-direction: column; 
+    border: 1px solid black; 
+    /* margin:0 200px; */
 }
-.first-line {
+/* .first-line {
     border: 1px solid red;
     justify-content: center;
     display: flex;
     flex-direction: row;
-    margin:0 150px;
-    padding: 20px;
+   
     
 }
 .second-line {
     border: 1px solid red;
     justify-content: center;
     display: flex;
-    flex-direction: row;
-    margin:0 150px;
-    padding: 20px;
-}
-.third-line {
+    flex-direction: row; */ */
+    /* margin:0 150px; */
+    /* padding: 20px; */
+/* } */
+/* .third-line {
     border: 1px solid red;
     justify-content: center;
     display: flex;
-    flex-direction: row;
-    margin:0 150px;
-    padding: 20px;
-}
-.zero-zero {
-    border: 1px solid black;
-    padding:20px;
-}
-.zero-one {
-    border: 1px solid black;
-    padding:20px;
-}
-.zero-two {
-    border: 1px solid black;
-    padding:20px;
-}
+    flex-direction: row; */
+    /* margin:0 150px; */
+    /* padding: 20px; */
+/* } */
 .ex {
     font-family: 'Franklin Gothic Medium';
     color:green;
-
+    
 }
 .circle {
     font-family: 'Franklin Gothic Medium';
     color:red;
 }
-.one-zero{
+.row div {
     border: 1px solid black;
-    padding:20px;
-}
-.one-one{
-    border: 1px solid black;
-    padding:20px;
-}
-.one-two{
-    border: 1px solid black;
-    padding:20px;
-}
-.two-zero {
-    border: 1px solid black;
-    padding:20px;
-}
-.two-one {
-    border: 1px solid black;
-    padding:20px;
-}
-.two-two {
-    border: 1px solid black;
-    padding:20px;
+    width: 300px;
+    height: 100px;
+    font-size: 50px;
+    border: 1px solid red;
+    /* justify-content: center;
+    display: flex;
+    flex-direction: column; */
 }

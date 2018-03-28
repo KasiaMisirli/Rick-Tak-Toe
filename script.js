@@ -11,14 +11,13 @@ var allKeys = document.querySelectorAll(".row div");
 var cross =true;
 var moves = function(event){
    
-    if(cross){
+if(cross==true && event.target.textContent != "X" && event.target.textContent != "0"){
+       // event.target.textContent != "X" && event.target.textContent != "0"
         event.target.classList.add("ex");
         event.target.textContent = "X";
         var pos = event.target.id.split('');
-        // console.log(posX[0]);
         grid[+pos[0]][+pos[1]] = "X";
-
-    }else{
+}else if (cross!==true &&event.target.textContent != "X" && event.target.textContent != "0"){
         event.target.classList.add("circle");
         event.target.textContent = "0";
         var pos2 =event.target.id.split('');
@@ -33,24 +32,6 @@ allKeys.forEach(function(item){
     
 });
 
-//console.log(document.getElementById("00").innerHTML="kasia");
-
-
-// document.querySelector(".zero-zero").innerHTML=grid[0][0];
-// document.querySelector(".zero-one").innerHTML=grid[0][1];
-// document.querySelector(".zero-two").innerHTML=grid[0][2];
-// document.querySelector(".one-zero").innerHTML=grid[1][0];
-// document.querySelector(".one-one").innerHTML=grid[1][1];
-// document.querySelector(".one-two").innerHTML=grid[1][2];
-// document.querySelector(".two-zero").innerHTML=grid[2][0];
-// document.querySelector(".two-one").innerHTML=grid[2][1];
-// document.querySelector(".two-two").innerHTML=grid[2][2];
-
-// grid[0][1] = "X";
-// grid[0][2] = "X";
-// grid[0][3] = "X";
-// grid[0][0] = "0";
-// grid[2][0] = "X";
 var checkWins = function() {
     for(var i=0;i<grid.length;i++){
         for(var j=0;j<grid[i].length;j++){    
@@ -68,10 +49,10 @@ var checkWins = function() {
 }
 
 
-var result1 = "The winner is "+grid[i][2];
-var result2 = "The winner is "+grid[0][i];
-var result3 = "The winner is "+grid[1][1];
-var result4 = "The winner is "+grid[2][0];
+// var result1 = "The winner is "+grid[i][2];
+// var result2 = "The winner is "+grid[0][i];
+// var result3 = "The winner is "+grid[1][1];
+// var result4 = "The winner is "+grid[2][0];
 
 
 
