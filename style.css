@@ -1,4 +1,8 @@
-
+body {
+    background-image: url(forest.jpeg);
+    background-size:cover;
+    cursor: url("15.png"), auto;
+}
 
 
 .main-grid {
@@ -6,6 +10,15 @@
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    width: 50%;
+    height: 50%;
+    /* margin: 100px auto; */
+    
+    /* padding:10% 24% 30% 24%; */
+    
+    
+    /* cursor: grabbing; */
+
 
     /* flex-direction: column; 
     border: 1px solid black; 
@@ -36,20 +49,25 @@
     /* padding: 20px; */
 /* } */
 .ex {
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'Gloria Hallelujah', cursive;
     color:green;
+    font-size: 100px;
+    /* cursor: url(15.png), auto; */
+    
     
 }
 .circle {
-    font-family: 'Franklin Gothic Medium';
-    color:red;
+    font-family: 'Bonbon', cursive;
+    color:black;
+    font-size: 100px;
 }
 .row div {
     border: 1px solid black;
-    width: 25%;
-    height: 100%;
+    width: 20%;
+    height: 40px;
     padding: 10% 3%;
-    font-size: 200%;
+    font-size: 40px;
+    background-color: darkred;
 
     /* font-size: 50px; */
     
@@ -57,14 +75,26 @@
     display: flex;
     flex-direction: column; */
 }
-/* .cell {
-  flex: 0 0 32%;                      
-  height: 50px;
-  margin-bottom: 5px;
-  background-color: #999;
+/* #00 {
+    border-top: none;
+    border-left: none;
 } */
-/* #00 #01 #02 {
+.winner {
+    text-decoration: line-through;
+}
+.image1 {
+    /* width:  200px; */
+    height: 400px;
+}
+.theme {
+    text-align: center;
+    color: red;
+}
+.image2 {
+    height: 400px;
+}
+.images-and-grid {
     justify-content: center;
     display: flex;
-    flex-direction: column;
-} */
+    flex-direction: row;
+}

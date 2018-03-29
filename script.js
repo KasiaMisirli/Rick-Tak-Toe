@@ -46,6 +46,7 @@ var checkWins = function() {
     for(var i=0;i<grid.length;i++){
         for(var j=0;j<grid[i].length;j++){    
             if(grid[i][0]===grid[i][1] && grid[i][1]===grid[i][2]){
+               
                 result="The winner is "+grid[i][2];
                 return(console.log(result));
             }else if(grid[0][i]===grid[1][i] && grid[1][i]===grid[2][i]){
