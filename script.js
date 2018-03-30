@@ -8,9 +8,8 @@ var grid = [
 
 var allKeys = document.querySelectorAll(".row div");
 var result;
-
 var cross =true;
-//var hat = url(hat.png);
+
 var moves = function(event){
     if(event.target.className === "circle" || event.target.className === "ex" || result!== undefined){
         return;
@@ -32,12 +31,6 @@ var moves = function(event){
     }
 } 
 
-
-
-// if(result!==undefined){
-// console.log("This is the end of this game! "+result);
-// }
-
 allKeys.forEach(function(item){
     item.addEventListener("click",moves);
 });
@@ -46,94 +39,43 @@ allKeys.forEach(function(item){
 var checkWins = function() {
     for(var i=0;i<grid.length;i++){
         for(var j=0;j<grid[i].length;j++){    
-            if(grid[i][0]===grid[i][1] && grid[i][1]===grid[i][2]){
-               
-                result="The winner is "+grid[i][2];
-                //return(console.log(result));
-                return (document.querySelector(".result").innerHTML=result);
-            }else if(grid[0][i]===grid[1][i] && grid[1][i]===grid[2][i]){
-                result="The winner is "+grid[0][i];
-                //return(console.log(result));
-                return (document.querySelector(".result").innerHTML=result);
-            }else if(grid[0][0]===grid[1][1] && grid[1][1]===grid[2][2]){
-                result="The winner is "+grid[1][1];
-                //return(console.log(result));
-                return (document.querySelector(".result").innerHTML=result);
-            }else if(grid[2][0]===grid[1][1] && grid[1][1]===grid[0][2]){
-                result="The winner is "+grid[2][0];
-                //return(console.log(result));
-                return (document.querySelector(".result").innerHTML=result);
+            if((grid[i][0]==="X" && grid[i][1]==="X" && grid[i][2]==="X")||
+            (grid[i][0]==="0" && grid[i][1]==="0" && grid[i][2]==="0")){
+                if(grid[i][2]==="X"){
+                    result="The winner is Rick Grimes!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[i][2]==="0"){
+                    result="The winner is Zombelson Zombekowski!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }
+            }else if((grid[0][i]=== "X" && grid[1][i]==="X" && grid[2][i]==="X")||
+            (grid[0][i]=== "0" && grid[1][i]==="0" && grid[2][i]==="0")){
+                if(grid[0][i]==="X"){
+                    result="The winner is Rick Grimes!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[0][i]==="0"){
+                    result="The winner is Zombelson Zombekowski!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }
+            }else if((grid[0][0]==="X" && grid[1][1]==="X" && grid[2][2]==="X")||
+            (grid[0][0]==="0" && grid[1][1]==="0" && grid[2][2]==="0")){
+                if(grid[0][0]==="X"){
+                    result="The winner is Rick Grimes!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[0][0]==="0"){
+                    result="The winner is Zombelson Zombekowski!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }
+            }else if((grid[2][0]==="X" && grid[1][1]==="X" && grid[0][2]==="X")||
+            (grid[2][0]==="0" && grid[1][1]==="0" && grid[0][2]==="0")){
+                if(grid[2][0]==="X"){
+                    result="The winner is Rick Grimes!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[2][0]==="0"){
+                    result="The winner is Zombelson Zombekowski!";
+                    return (document.querySelector(".result").innerHTML=result);
+                }
             }
         }
     }
 }
-
-// var result1 = "The winner is "+grid[i][2];
-// var result2 = "The winner is "+grid[0][i];
-// var result3 = "The winner is "+grid[1][1];
-// var result4 = "The winner is "+grid[2][0];
-
-
-
-
-
-
-// for(var i=0;i<grid.length;i++){
-//     for(var j=0;j<grid[i].length;j++){
-       
-//         console.log(grid[i][j]);
-//     }
-
-// }
-
-// document.addEventListener("click",function(){
-//     document.querySelector("t").textContent="X";
-// })
-//---------------------------------------------------------
-// var allKeys = document.querySelectorAll(".main-grid");
-
-// var moves = function(event){
-//     event.target.classList.add("ex");
-
-//     event.target.textContent = "X";
-// }
-
-// allKeys.forEach(function(item){
-//     item.addEventListener("click",moves);
-// });
-
-
-// var allKeys = document.querySelectorAll(".main-grid");
-
-// var moves = function(event){
-//     event.target.classList.add("circle");
-
-//     event.target.textContent = "0";
-// }
-
-// allKeys.forEach(function(item){
-//     item.addEventListener("click",moves);
-// });
-
-//-----------------------------------------
-
-
-
-
-
-
-
-// var creatingGrid = function(numberOfRows, numberOfCols){
-//     for(var row=0; row < numberOfRows; row++){
-//         grid.push("I".repeat(numberOfCols).split(""));
-//     }
-//     return grid;
-// }
-// console.log(creatingGrid(3,3));
-// var player1 = "X";
-// var player2 = "0";
-
-
-
-// grid[0][1] = "X";
-// grid[1][2] = "0";
