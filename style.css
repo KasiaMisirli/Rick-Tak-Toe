@@ -11,8 +11,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
     opacity: 0.8;
     /* margin: 100px auto; */
     
@@ -82,7 +82,7 @@ body {
     width: auto; */
 }
 .row div {
-    border: 1px solid black;
+    border: 1px solid grey;
     width: 20%;
     height: 40px;
     padding: 10% 3%;
@@ -104,7 +104,7 @@ body {
 }
 .image1 {
     /* width:  200px; */
-    height: 400px;
+    height: 350px;
     
 
 }
@@ -115,7 +115,7 @@ body {
     font-size: 50px;
 }
 .image2 {
-    height: 400px;
+    height: 350px;
   
 
 }
@@ -125,22 +125,28 @@ body {
     flex-direction: row;
 }
 .refresh {
-    height: 60px;
+    height: 40px;
     width: 120px;
-    background-color: darkblue;
+    /* background-color: darkblue; */
+    border: 1px solid grey;
     border-radius: 25px;
     color: red;
     font-size: 20px;
     opacity: 0.5;
+    text-align: center;
+    
+    
+     
     
 }
 .result {
     text-align: center;
-    color: red;
+    color: darkred;
     font-family: 'Reenie Beanie', cursive;
-    font-size: 50px; 
+    font-size: 40px; 
     
 }
+
 /* @keyframes slidein {
     from {
       margin-left: 100%;
