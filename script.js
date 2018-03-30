@@ -42,40 +42,103 @@ var checkWins = function() {
             if((grid[i][0]==="X" && grid[i][1]==="X" && grid[i][2]==="X")||
             (grid[i][0]==="0" && grid[i][1]==="0" && grid[i][2]==="0")){
                 if(grid[i][2]==="X"){
-                    result="The winner is Rick Grimes!";
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
+                    document.querySelector(".zombie").audio;
                     return (document.querySelector(".result").innerHTML=result);
                 }else if(grid[i][2]==="0"){
-                    result="The winner is Zombelson Zombekowski!";
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins";
+                    zombieWinner();
+                    //song1();
                     return (document.querySelector(".result").innerHTML=result);
                 }
             }else if((grid[0][i]=== "X" && grid[1][i]==="X" && grid[2][i]==="X")||
             (grid[0][i]=== "0" && grid[1][i]==="0" && grid[2][i]==="0")){
                 if(grid[0][i]==="X"){
-                    result="The winner is Rick Grimes!";
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
                     return (document.querySelector(".result").innerHTML=result);
                 }else if(grid[0][i]==="0"){
-                    result="The winner is Zombelson Zombekowski!";
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins";
+                    zombieWinner();
+                    //song1();
                     return (document.querySelector(".result").innerHTML=result);
                 }
             }else if((grid[0][0]==="X" && grid[1][1]==="X" && grid[2][2]==="X")||
             (grid[0][0]==="0" && grid[1][1]==="0" && grid[2][2]==="0")){
                 if(grid[0][0]==="X"){
-                    result="The winner is Rick Grimes!";
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
                     return (document.querySelector(".result").innerHTML=result);
                 }else if(grid[0][0]==="0"){
-                    result="The winner is Zombelson Zombekowski!";
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins";
+                    zombieWinner();
                     return (document.querySelector(".result").innerHTML=result);
                 }
             }else if((grid[2][0]==="X" && grid[1][1]==="X" && grid[0][2]==="X")||
             (grid[2][0]==="0" && grid[1][1]==="0" && grid[0][2]==="0")){
                 if(grid[2][0]==="X"){
-                    result="The winner is Rick Grimes!";
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
                     return (document.querySelector(".result").innerHTML=result);
                 }else if(grid[2][0]==="0"){
-                    result="The winner is Zombelson Zombekowski!";
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins";
+                    zombieWinner();
                     return (document.querySelector(".result").innerHTML=result);
                 }
             }
         }
     }
 }
+
+
+var rickWinner=function(){
+    document.querySelector(".image2").animate([
+        // keyframes
+        { transform: 'translateY(0px)' }, 
+        { transform: 'translateY(-300px)' }
+      ], { 
+        // timing options
+        duration: 850,
+        iterations: 3
+      });
+}
+
+
+var zombieWinner=function(){
+    document.querySelector(".image1").animate([
+        // keyframes
+        { transform: 'translateY(0px)' }, 
+        { transform: 'translateY(-300px)' }
+      ], { 
+        // timing options
+        duration: 850,
+        iterations: 3
+      });
+}
+
+
+// var song1 = function(){ 
+//     var audio = document.getElementById('song1');
+//     audio.src = 
+//         'zombie/wav/' + 
+//         document.getElementById('song1').getAttribute('data-value');
+//     audio.load();
+//     audio.play();
+// }
+// song1();
+
+// var target;
+// var song1= function(e) {
+//     //e.preventDefault();
+  
+//     var elm = e.target;
+//     var audio = document.getElementById('song1');
+  
+//     var source = document.getElementById('song1Source');
+//     source.src = elm.getAttribute('data-value');
+  
+//    // audio.load(); //call this to just preload the audio without playing
+//     audio.play(); //call this to play the song right away
+//   };
+//   song1();

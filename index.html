@@ -9,11 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Bonbon" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 </head>
 <body>
- <h1 class="theme">ZOMBIE vs RICK GRIMES</h1>
+ <h1 class="theme"><div class="rtt">RICK-TAC-TOE</div></h1>
   <div class="images-and-grid">
-      <img src="zombie.png" class="image1" alt="#">
+      <img src="zombie.png" class="image1 animated bounceInDown zoomInDown" alt="#">
         <div class="main-grid row">
                 <div id="00 cell" type="text"></div>
                 <div id="01 cell" type="text"></div>
@@ -25,11 +26,15 @@
                 <div id="21 cell"></div>
                 <div id="22 cell"></div>
             </div>
-        <img src="rick2.png" class="image2" alt="#">
+        <img src="rick2.png" class="image2 animated bounceInDown zoomInDown" alt="#">
     </div>
-        <p class="result">Wait for it...</p>
+        <p class="result">Zombelson Zombekowski vs Rick Grimes</p>
         <input class="refresh" type="button" value="Play again!" onClick="history.go(0)">
     <script src="script.js"></script>
+    <!-- <audio id="song1" controls="controls">
+        <source id="song1Source" src="" type="audio/wav"  data-value="zombie.wav" >
+    </audio> -->
+    <!-- <a href="zombie.wav" class="zombie"></a> -->
 </body>
 </html>
 
