@@ -10,19 +10,19 @@ var allKeys = document.querySelectorAll(".row div");
 var result;
 
 var cross =true;
-
+//var hat = url(hat.png);
 var moves = function(event){
-    if(event.target.textContent === "X" || event.target.textContent === "0" || result!== undefined){
+    if(event.target.className === "circle" || event.target.className === "ex" || result!== undefined){
         return;
     }else{
         if(cross==true && event.target.textContent != "X" && event.target.textContent != "0"){
                 event.target.classList.add("ex");
-                event.target.textContent = "X";
+                //event.target.textContent = "X";
                 var pos = event.target.id.split('');
                 grid[+pos[0]][+pos[1]] = "X";
         }else if (cross!== true && event.target.textContent != "X" && event.target.textContent != "0"){
                 event.target.classList.add("circle");
-                event.target.textContent = "0";
+                //event.target.textContent = "0";
                 var pos2 =event.target.id.split('');
                 grid[+pos2[0]][+pos2[1]] = "0";
         }   
