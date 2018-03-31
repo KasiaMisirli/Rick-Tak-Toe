@@ -1,5 +1,4 @@
-console.log("tic tac toe");
-
+//the grid that logs moves
 var grid = [
     ["1","2","3"],
     ["5","4","6"],
@@ -7,133 +6,127 @@ var grid = [
 ];
 
 var allKeys = document.querySelectorAll(".row div");
-
+var result;
 var cross =true;
+//switch player, updating grid and adding image into the grid
 var moves = function(event){
-   
-    if(cross){
-        event.target.classList.add("ex");
-        event.target.textContent = "X";
-        var pos = event.target.id.split('');
-        // console.log(posX[0]);
-        grid[+pos[0]][+pos[1]] = "X";
-
+    if(event.target.className === "circle" || event.target.className === "ex" || result!== undefined){
+        return;
     }else{
-        event.target.classList.add("circle");
-        event.target.textContent = "0";
-        var pos2 =event.target.id.split('');
-        grid[+pos2[0]][+pos2[1]] = "0";
-    }   
-    cross=!cross;
-    checkWins();
-}
-
+        if(cross==true && event.target.textContent != "X" && event.target.textContent != "0"){
+            event.target.classList.add("ex");
+            var pos = event.target.id.split('');
+            grid[+pos[0]][+pos[1]] = "X";
+        }else if (cross!== true && event.target.textContent != "X" && event.target.textContent != "0"){
+            event.target.classList.add("circle");
+            var pos2 =event.target.id.split('');
+            grid[+pos2[0]][+pos2[1]] = "0";
+        }   
+        cross=!cross;
+        checkWins();
+    }
+} 
+//listening for moves
 allKeys.forEach(function(item){
     item.addEventListener("click",moves);
-    
 });
 
-//console.log(document.getElementById("00").innerHTML="kasia");
-
-
-// document.querySelector(".zero-zero").innerHTML=grid[0][0];
-// document.querySelector(".zero-one").innerHTML=grid[0][1];
-// document.querySelector(".zero-two").innerHTML=grid[0][2];
-// document.querySelector(".one-zero").innerHTML=grid[1][0];
-// document.querySelector(".one-one").innerHTML=grid[1][1];
-// document.querySelector(".one-two").innerHTML=grid[1][2];
-// document.querySelector(".two-zero").innerHTML=grid[2][0];
-// document.querySelector(".two-one").innerHTML=grid[2][1];
-// document.querySelector(".two-two").innerHTML=grid[2][2];
-
-// grid[0][1] = "X";
-// grid[0][2] = "X";
-// grid[0][3] = "X";
-// grid[0][0] = "0";
-// grid[2][0] = "X";
+//checking wins by checking the grid and adding animation for the winner
 var checkWins = function() {
     for(var i=0;i<grid.length;i++){
         for(var j=0;j<grid[i].length;j++){    
-            if(grid[i][0]===grid[i][1] && grid[i][1]===grid[i][2]){
-                console.log("The winner is "+grid[i][2]);
-            }else if(grid[0][i]===grid[1][i] && grid[1][i]===grid[2][i]){
-                console.log("The winner is "+grid[0][i]);
-            }else if(grid[0][0]===grid[1][1] && grid[1][1]===grid[2][2]){
-                console.log("The winner is "+grid[1][1]);
-            }else if(grid[2][0]===grid[1][1] && grid[1][1]===grid[0][2]){
-                console.log("The winner is "+grid[2][0]);
+            if((grid[i][0]==="X" && grid[i][1]==="X" && grid[i][2]==="X")||
+            (grid[i][0]==="0" && grid[i][1]==="0" && grid[i][2]==="0")){
+                if(grid[i][2]==="X"){
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
+                    playAudioRick();
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[i][2]==="0"){
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins!";
+                    zombieWinner();
+                    playAudioZombie();
+                    return (document.querySelector(".result").innerHTML=result);
+                }
+            }else if((grid[0][i]=== "X" && grid[1][i]==="X" && grid[2][i]==="X")||
+            (grid[0][i]=== "0" && grid[1][i]==="0" && grid[2][i]==="0")){
+                if(grid[0][i]==="X"){
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
+                    playAudioRick();
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[0][i]==="0"){
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins!";
+                    zombieWinner();
+                    playAudioZombie();
+                    return (document.querySelector(".result").innerHTML=result);
+                }
+            }else if((grid[0][0]==="X" && grid[1][1]==="X" && grid[2][2]==="X")||
+            (grid[0][0]==="0" && grid[1][1]==="0" && grid[2][2]==="0")){
+                if(grid[0][0]==="X"){
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
+                    playAudioRick();
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[0][0]==="0"){
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins!";
+                    zombieWinner();
+                    playAudioZombie();
+                    return (document.querySelector(".result").innerHTML=result);
+                }
+            }else if((grid[2][0]==="X" && grid[1][1]==="X" && grid[0][2]==="X")||
+            (grid[2][0]==="0" && grid[1][1]==="0" && grid[0][2]==="0")){
+                if(grid[2][0]==="X"){
+                    result="<i>This is how we SURVIVE! </i>---Rick Grimes wins!";
+                    rickWinner();
+                    playAudioRick();
+                    return (document.querySelector(".result").innerHTML=result);
+                }else if(grid[2][0]==="0"){
+                    result="<i>uuugh</i>---Zombelson Zombekowski wins!";
+                    zombieWinner();
+                    playAudioZombie();
+                    return (document.querySelector(".result").innerHTML=result);
+                }
             }
         }
     }
 }
 
+//When Rick is the winner, run below animation
+var rickWinner=function(){
+    document.querySelector(".image2").animate([
+        { transform: 'translateY(0px)' }, 
+        { transform: 'translateY(-300px)' }
+      ], { 
+        duration: 850,
+        iterations: 2
+      });
+}
+//when Zombie is the winner, run below animation
+var zombieWinner=function(){
+    document.querySelector(".image1").animate([
+        { transform: 'translateY(0px)' }, 
+        { transform: 'translateY(-300px)' }
+      ], { 
+        duration: 850,
+        iterations: 2
+      });
+}
 
-var result1 = "The winner is "+grid[i][2];
-var result2 = "The winner is "+grid[0][i];
-var result3 = "The winner is "+grid[1][1];
-var result4 = "The winner is "+grid[2][0];
+//sound effects
+var x = document.getElementById("song1"); 
 
+function playAudioZombie() { 
+    x.play(); 
+} 
+var y = document.getElementById("song2"); 
 
+function playAudioRick() { 
+    y.play(); 
+} 
+var z = document.getElementById("song3"); 
 
-
-
-
-// for(var i=0;i<grid.length;i++){
-//     for(var j=0;j<grid[i].length;j++){
-       
-//         console.log(grid[i][j]);
-//     }
-
-// }
-
-// document.addEventListener("click",function(){
-//     document.querySelector("t").textContent="X";
-// })
-//---------------------------------------------------------
-// var allKeys = document.querySelectorAll(".main-grid");
-
-// var moves = function(event){
-//     event.target.classList.add("ex");
-
-//     event.target.textContent = "X";
-// }
-
-// allKeys.forEach(function(item){
-//     item.addEventListener("click",moves);
-// });
-
-
-// var allKeys = document.querySelectorAll(".main-grid");
-
-// var moves = function(event){
-//     event.target.classList.add("circle");
-
-//     event.target.textContent = "0";
-// }
-
-// allKeys.forEach(function(item){
-//     item.addEventListener("click",moves);
-// });
-
-//-----------------------------------------
-
-
-
-
-
-
-
-// var creatingGrid = function(numberOfRows, numberOfCols){
-//     for(var row=0; row < numberOfRows; row++){
-//         grid.push("I".repeat(numberOfCols).split(""));
-//     }
-//     return grid;
-// }
-// console.log(creatingGrid(3,3));
-// var player1 = "X";
-// var player2 = "0";
-
-
-
-// grid[0][1] = "X";
-// grid[1][2] = "0";
+function playAudioOpening() { 
+    z.play(); 
+} 
+playAudioOpening();
