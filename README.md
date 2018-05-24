@@ -1,6 +1,6 @@
 # Rick-Tac-Toe
 
-## Click the following link to play: https://kasiamisirli.github.io/Rick-Tak-Toe/.
+## Click the following link to play [here](https://kasiamisirli.github.io/Rick-Tak-Toe/).
 
 **Rick-Tac-Toe** is based on Tic Tac Toe game, which is intended for two players only, X (Sheriff hat) and O (Zombie finger), 
 who take turns marking the spaces in a 3 × 3 grid. The player who succeeds in placing three of their marks in a horizontal, 
